@@ -15,7 +15,7 @@ function App() {
           <div className="max-w-6xl w-full mx-auto px-4">
             <Routes>
               <Route path="/" element={<LoginPage />} />
-              <Route path="/Home" enlement={<Home />} /> {/* Set Home as the starter page */}
+              <Route path="/Home" element={<Home />} /> {/* Set Home as the starter page */}
               <Route path="/compare" element={<ComparePage />} />
               <Route path="/register" element={<RegistrationLogin />} /> {/* Add this line */}
               <Route path="/notification" element={<Notification />} />

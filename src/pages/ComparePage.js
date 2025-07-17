@@ -3,7 +3,7 @@ import jsPDF from 'jspdf';
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import ChatBotIcon from '../pages/ChatBotIcon.webp'; // Adjust path if needed
+import ChatBotIcon from '../Icons/ChatBotIcon.webp'; // Adjust path if needed
 
 import ChatBot from '../components/ChatBot'; // Adjust path if needed
 
