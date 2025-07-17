@@ -1,0 +1,696 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Reem Kufi", sans-serif !important;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.App {
+  min-height: 100vh;
+  width: 85vw;
+  max-width: 1900px;
+  margin: 0rem auto;
+}
+.Background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3A294F 20%, #7373D2 60%, #2781c6 100%);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+}
+
+.shadow-button {
+  box-shadow: 0 4px 16px rgba(44, 62, 80, 0.18), 0 1.5px 4px rgba(44, 62, 80, 0.10);
+  transition: box-shadow 0.2s, transform 0.2s;
+  font-weight: 600;
+}
+.shadow-button:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.12);
+}
+.center-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8.5rem;
+}
+/* --- LoginPage Styles --- */
+
+/* --- ComparePage Styles --- */
+.compare-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+  margin-bottom: 2rem;
+  /* Center the compare-table horizontally */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.compare-table th, .compare-table td {
+  padding: 0.85rem 1.2rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.compare-table th {
+  background: #7373be ;
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.compare-table tr:nth-child(even) {
+  background: #f7f7fa;
+}
+
+.compare-table tr:hover {
+  background: #ece6f7;
+}
+
+.compare-table td {
+  border-bottom: 1px solid #f0e9fa;
+}
+
+.compare-table td:last-child, .compare-table th:last-child {
+  text-align: center;
+}
+
+.compare-table-scroll {
+  max-height: 400px;
+  overflow: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+  background: #fff;
+}
+
+/* For vertical centering on the page, wrap the table in a flex container: */
+.compare-table-center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* Adjust as needed */
+  width: 100%;
+}
+
+/* File Upload Styles */
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.file-upload input[type="file"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bdbdbd;
+  background: #f7f7fa;
+  font-size: 1rem;
+  transition: border 0.2s;
+  width: 220px;
+}
+.file-upload input[type="file"]:hover,
+.file-upload input[type="file"]:focus {
+  border: 1.5px solid #457b9d;
+  background: #eaf4fb;
+}
+
+/* --- Login & Registration Page Styles --- */
+.loginpage-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(255,255,255,0.02);
+  padding-top: 8.5vh;
+}
+.loginpage-form {
+  background: white;
+  padding: 2.2rem 1.2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  width: 100%;
+  max-width: 370px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5vh;
+}
+.loginpage-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  color: #8D68AA;
+}
+.loginpage-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.loginpage-label {
+  display: block;
+  color: #8D68AA;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.loginpage-input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid #DAE3D7;
+  font-size: 1rem;
+}
+.loginpage-btn {
+  width: 100%;
+  padding: 11px 0;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(33,161,243,0.08);
+  margin-bottom: 14px;
+  transition: background 0.2s;
+}
+.loginpage-btn-login {
+  background: linear-gradient(90deg, #3A294F 10%, #7373D2 60%, #2781c6 100%);
+  color: white;
+}
+.loginpage-btn-register {
+  background: linear-gradient( #3A294F 10%, #7373D2 60%, #2781c6 100%);
+  color: white;
+  margin-bottom: 0;
+}
+.or {
+  text-align: center;
+  color: gray;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 8px;
+}
+.social-icons button {
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+.text-green-600 {
+  color: #16a34a;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.mt-4 {
+  margin-top: 1rem;
+  color: gray;
+}
+.loginpage-link {
+  color: #8D68AA;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.loginpage-link:hover {
+  color: #3A294F;
+}
+@media (max-width: 600px) {
+  .loginpage-bg {
+    padding-top: 1vh;
+  }
+  .loginpage-form {
+    margin-top: 1vh;
+    padding: 1rem 0.3rem;
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .loginpage-title {
+    font-size: 1.2rem;
+  }
+  .loginpage-input {
+    font-size: 0.95rem;
+    padding: 8px 8px;
+  }
+  .loginpage-btn {
+    font-size: 0.98rem;
+    padding: 9px 0;
+  }
+}
+
+/* Responsive and Centering */
+@media (max-width: 700px) {
+  .compare-table th, .compare-table td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.95rem;
+  }
+  .file-upload input[type="file"] {
+    width: 140px;
+  }
+}
+
+/* Button enhancements (already present, but ensure shadow and spacing) */
+.shadow-button {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  font-size: 1.08rem;
+  font-weight: 600;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.shadow-button:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.center-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+/*Home Page Styles*/
+.compare-btn {
+  width: 20%;
+  padding: 11px 0;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(33,161,243,0.08);
+  margin-bottom: 4px;
+  transition: background 0.2s;
+}
+.compare-btn-style {
+  background: linear-gradient(90deg, #3A294F 0%, #8D68AA 100%);
+  color: white;
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  background: #000048;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  margin-bottom: 2rem;
+}
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: space-between;
+  font-family: "Gellix-Regular", sans-serif !important;
+}
+.navbar-left {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  top: 35px;
+  right: 10px;
+  position: absolute;
+  justify-content: space-between;
+}
+.navbar-title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.navbar-link {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: color 0.2s;
+ 
+}
+.navbar-link:hover {
+  color: #DAE3D7;
+}
+
+/* Card styles */
+.compare-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 1.5rem 2rem;
+  max-width: 350px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 10%;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.compare-card:hover {
+  box-shadow: 0 6px 40px rgba(44,62,80,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+.compare-card-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #8D68AA;
+  margin-bottom: 1rem;
+}
+.compare-card-desc {
+  color: #5B7768;
+  font-size: 1rem;
+}
+serviceNowAIBotIcon {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 60px;
+    height: 60px;
+    z-index: 99998;
+    margin-right: 20px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    border: none;
+}
+.button-comparepage {
+    height: 37px;
+    font-size: 12px;
+    font-family: var(--font-family-semiBold);
+    margin-right: 10px;
+    line-height: normal;
+    color: var(--white);
+    padding: 0px 28px 0px 16px;
+    border-radius: 32px;
+    background-position: calc(100% - 16px) center;
+    top: 20%;
+}
+.compare-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.button-comparepage {
+  padding: 12px 32px;
+  border-radius: 32px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff 100%);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(33,161,243,0.08);
+  transition: background 0.2s, transform 0.2s;
+  align-items: center;
+}
+
+.button-comparepage {
+  color: #8D68AA;
+}
+
+.button-comparepage:hover {
+  background: linear-gradient(90deg,#7373D2 30%, #2781c6 100%);
+  transform: translateY(-2px) scale(1.04);
+  color: #fff;
+}
+/* Upload Files Section - Centered and Responsive */
+.upload-files-section {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  background: none; /* Remove any solid background */
+}
+
+@media (min-width: 768px) {
+  .upload-files-section {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+}
+
+/* Upload Card - Glassmorphism style */
+.upload-card {
+  background: rgba(255, 255, 255, 0.38); /* Semi-transparent */
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+  padding: 2rem 1.5rem;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px); /* Glass effect */
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(200,200,255,0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* File input style for blending */
+.file-upload-input {
+  width: 100%;
+  max-width: 260px;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 0.75rem;
+  background: rgba(247,247,250,0.7);
+  font-size: 1rem;
+  transition: border 0.2s, background 0.2s;
+}
+.file-upload-input:hover,.file-upload-input:hover,
+.file-upload-input:focus {.file-upload-input:focus {
+  border: 1.5px solid #457b9d;  border: 1.5px solid #457b9d;
+
+
+
+
+
+}  background: rgba(234,244,251,0.85);  background: rgba(234,244,251,0.85);
+}
+.page-title {
+  font-size: 2.0rem;
+  font-weight: 800;
+  color: #171718;
+  letter-spacing: 1px;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* ChatBot Popup Styles */
+.chatbot-popup {
+  position: fixed;
+  bottom: 110px;
+  right: 32px;
+  width: 320px;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: chatbot-popin 0.2s;
+}
+@keyframes chatbot-popin {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.chatbot-header {
+  background: linear-gradient(90deg,#7373D2 30%, #2781c6 100%);
+  color: #fff;
+  padding: 1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chatbot-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.chatbot-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #f7f7fa;
+  max-height: 250px;
+}
+.chatbot-msg {
+  margin-bottom: 0.7rem;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  word-break: break-word;
+}
+.chatbot-msg.bot {
+  background: #ece6f7;
+  color: #3A294F;
+  align-self: flex-start;
+}
+.chatbot-msg.user {
+  background: linear-gradient(90deg,#7373D2 30%, #2781c6 100%);
+  color: #fff;
+  align-self: flex-end;
+  margin-left: auto;
+  align-self: auto;
+}
+.chatbot-inputbar {
+  display: flex;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.chatbot-inputbar input {
+  flex: 1;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 0 0 0 1rem;
+  outline: none;
+  background: #f7f7fa;
+}
+.chatbot-inputbar button {
+  background: linear-gradient(90deg,#7373D2 30%, #2781c6 100%);
+  color: #fff;
+  border: none;
+  padding: 0 1.2rem;
+  font-size: 1rem;
+  border-radius: 0 0 1rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.chatbot-inputbar button:hover {
+  background: #3A294F;
+}
+.history-btn {
+  background: #8D68AA;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  margin: 0 0.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.history-btn:hover {
+  background: #3A294F;
+}
+.chatbot-demo-btn {
+            margin-top: 10px;
+            background: #a98ebe;
+            color: #f9f8f8;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.3rem 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.95rem;
+          }
+/* Add to your App.css or ComparePage.css */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.1s;
+}
+.icon-btn:active {
+  transform: scale(0.92);
+}
+.upload-action-icon {
+  width: 26px;
+  height: 26px;
+  margin-left: 2px;
+  margin-right: 2px;
+  filter: drop-shadow(0 1px 2px rgba(44,62,80,0.10));
+  transition: box-shadow 0.2s;
+}
+.icon-btn:hover .upload-action-icon {
+  box-shadow: 0 2px 8px rgba(44,62,80,0.18);
+}
+
+/* Preview window (opened by JS) - override default browser background */
+.preview-window-bg {
+  background: rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #2d2d2d;
+  font-family: "Reem Kufi", sans-serif;
+  padding: 2rem;
+  min-height: 100vh;
+  margin: 0;
+}
+.preview-window-bg pre {
+  background: transparent;
+  color: #3A294F;
+  font-size: 1.08rem;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Add to App.css or ComparePage.css */
+.glass-btn {
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(180,180,255,0.18);
+  color: #3A294F;
+  border-radius: 12px;
+  padding: 0.35rem 1.1rem;
+  margin: 0 2px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+  align-self: auto;
+  margin-top: 10px;;
+  margin-right: 10px;
+  margin-inline-start: 10px;
+}
+.glass-btn:hover {
+  background: rgba(141,104,170,0.18);
+  color: #6d3fa6;
+  box-shadow: 0 4px 16px rgba(44,62,80,0.18);
+}
+
+

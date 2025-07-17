@@ -1,0 +1,56 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/static/*", "/images/*", "/*.css", "/*.js"]
+  },
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/login/github",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/logout",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/me",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/.auth/login/github/callback",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/login/github/error",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/login/github/unauthorized",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/login/github/success",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/login/github/redirect",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/login/github/complete",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/login/github/initialize",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/login/github/finish",
+      "allowedRoles": ["anonymous"]
+    }
+  ]
+}
