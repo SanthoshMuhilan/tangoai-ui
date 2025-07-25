@@ -9,17 +9,11 @@ function ComparePage() {
   const [file1Content, setFile1Content] = useState('');
   const [file2Content, setFile2Content] = useState('');
   const [diffRows, setDiffRows] = useState([]);
-  const [history, setHistory] = useState(() => {
-    const saved = localStorage.getItem('compareHistory');
-    return saved ? JSON.parse(saved) : [];
-  });
   const [showChat, setShowChat] = useState(false);
   const [pendingChatMessage, setPendingChatMessage] = useState(null);
 
   const file1Ref = useRef(null);
   const file2Ref = useRef(null);
-  const [file1Name, setFile1Name] = useState('');
-  const [file2Name, setFile2Name] = useState('');
   const navigate = useNavigate();
 
   // New state for popup
@@ -42,43 +36,6 @@ function ComparePage() {
       };
       reader.readAsText(file);
     }
-  };
-
-  const compareFiles = () => {
-    const lines1 = file1Content.split('\n');
-    const lines2 = file2Content.split('\n');
-    const maxLen = Math.max(lines1.length, lines2.length);
-    const rows = [];
-    for (let i = 0; i < maxLen; i++) {
-      const line1 = lines1[i] || '';
-      const line2 = lines2[i] || '';
-      rows.push({
-        line: i + 1,
-        file1: line1,
-        file2: line2,
-        isDiff: line1 !== line2
-      });
-    }
-    setDiffRows(rows);
-
-    // Save to history
-    const file1Name = file1Ref.current?.files[0]?.name || 'File 1';
-    const file2Name = file2Ref.current?.files[0]?.name || 'File 2';
-    const newHistory = [
-      {
-        file1Name,
-        file2Name,
-        file1Content,
-        file2Content,
-        date: new Date().toLocaleString(),
-      },
-      ...history,
-    ].slice(0, 10); // Keep only last 10
-    setHistory(newHistory);
-    localStorage.setItem('compareHistory', JSON.stringify(newHistory));
-
-    // Show popup window with compare table
-    setShowComparePopup(true);
   };
 
   const handleReset = () => {
@@ -293,8 +250,8 @@ function ComparePage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          file1Name,
-          file2Name,
+          file1Content,
+          file2Content,
         }),
       });
       if (!response.ok) {
@@ -302,8 +259,7 @@ function ComparePage() {
       }
       const data = await response.json();
       console.log('Data from backend:', data);
-      // You can set state here if you want to display the data
-      // setDiffRows(data.diffRows); // Example if your API returns diffRows
+      // setDiffRows(data.diffRows); // Uncomment if your backend returns diffRows
     } catch (error) {
       console.error('API call error:', error);
     }
