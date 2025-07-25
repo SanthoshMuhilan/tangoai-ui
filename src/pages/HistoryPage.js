@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CognizantIcon from '../Icons/CognizantIcon.svg';
 
 function HistoryPage({ history }) {
   const handlePreview = (item, fileNum) => {
@@ -32,6 +33,7 @@ function HistoryPage({ history }) {
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 flex flex-col items-center">
       <nav className="navbar w-full">
         <div className="navbar-content">
+          <img src={CognizantIcon} alt="Cognizant" style={{ width: 32, height: 32, display: 'inline-block', verticalAlign: 'middle', gap: 2 }} />
           <span className="navbar-title">Tango AI</span>
           </div>
             <div className="navbar-left">

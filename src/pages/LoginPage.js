@@ -10,7 +10,6 @@ function LoginPage() {
       <div style={{
         flex: 1,
         position: 'relative',
-
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -20,22 +19,23 @@ function LoginPage() {
           src={IconImg}
           alt="Brand Icon"
           style={{
-            position: 'absolute',
+            position: 'relative',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            opacity: 0.45,
+            opacity: 100,
             zIndex: 1,
+            right: 0,
           }}
         />
         <div style={{ position: 'relative', zIndex: 2, width: '100%', height: '100%' }}></div>
       </div>
       {/* Right side with login form */}
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'white' }}>
+      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#000048' }}>
         <form className="loginpage-form" onSubmit={e => { e.preventDefault(); navigate('/Home'); }} style={{ width: '100%', maxWidth: 400 }}>
-          <h1 className="loginpage-title">Welcome!</h1>
+          <h1 className="loginpage-title">Welcome To Tango AI!</h1>
           <div className="loginpage-field">
             <label className="loginpage-label">Username</label>
             <input type="text" className="loginpage-input" placeholder="Enter username" />

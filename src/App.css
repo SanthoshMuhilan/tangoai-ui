@@ -108,6 +108,7 @@ nav {
   align-items: center;
   min-height: 60vh; /* Adjust as needed */
   width: 100%;
+  position: center;
 }
 
 /* File Upload Styles */
@@ -125,11 +126,13 @@ nav {
   font-size: 1rem;
   transition: border 0.2s;
   width: 220px;
+   gap: 100px;
 }
 .file-upload input[type="file"]:hover,
 .file-upload input[type="file"]:focus {
   border: 1.5px solid #457b9d;
   background: #eaf4fb;
+ 
 }
 
 /* --- Login & Registration Page Styles --- */
@@ -158,7 +161,8 @@ nav {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 22px;
-  color: #8D68AA;
+  font-family:  'Gellix', 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  color: #000048;
 }
 .loginpage-field {
   width: 100%;
@@ -166,7 +170,7 @@ nav {
 }
 .loginpage-label {
   display: block;
-  color: #8D68AA;
+  color: #4a4a78;
   font-weight: 600;
   margin-bottom: 7px;
 }
@@ -229,7 +233,7 @@ nav {
   color: gray;
 }
 .loginpage-link {
-  color: #8D68AA;
+  color: #373776;
   font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
@@ -348,39 +352,125 @@ nav {
   font-weight: 500;
   text-decoration: none;
   margin-left: 1.5rem;
-  transition: color 0.2s;
+  transition: color 0.2s, background 0.2s;
  
 }
 .navbar-link:hover {
-  color: #DAE3D7;
+  color: black;
 }
 
 /* Card styles */
 .compare-card {
+  position: relative;
+  width: 240px;
+  height: 220px;
   background: #fff;
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-  padding: 1.5rem 2rem;
-  max-width: 350px;
-  text-align: center;
-  margin-top: 10%;
-  margin-left: 10%;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  transition: box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
   cursor: pointer;
-  transition: box-shadow 0.2s, transform 0.2s;
 }
-.compare-card:hover {
-  box-shadow: 0 6px 40px rgba(44,62,80,0.18);
-  transform: translateY(-4px) scale(1.03);
+
+/* Slide 1 (icon area) */
+.compare-card .slide1 {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  width: 100%;
+  height: 100%;
+  background: #f8f7f7;
+  display: flex;
+  flex-direction: column; /* Stack title and icon vertically */
+  justify-content: flex-start; /* Title at top, icon below */
+  align-items: center;
+  z-index: 1;
+  transition: transform 10s;
+  transform: translateY(0px);
+  padding-top: 18px; /* Space for title */
 }
-.compare-card-title {
-  font-size: 1.7rem;
+.compare-card .slide1 .slide1-title {
+  font-size: 1.15rem;
   font-weight: 700;
-  color: #8D68AA;
-  margin-bottom: 1rem;
+  color: #3A294F;
+  margin-bottom: 12px;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.5px;
 }
-.compare-card-desc {
-  color: #5B7768;
+
+.compare-card:hover .slide1,
+.compare-card:focus-within .slide1 {
+  transform: translateY(0);
+}
+
+/* Slide 2 (content area) */
+.compare-card .slide2 {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2;
+  transition: transform 10s;
+  transform: translateY(-100px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+.compare-card:hover .slide2,
+.compare-card:focus-within .slide2 {
+  transform: translateY(0);
+}
+.compare-card .slide2::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c73df;
+}
+
+/* Icon style */
+.compare-card .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px; 
+  height: 1000%;
+}
+.compare-card .icon svg,
+.compare-card .icon i {
+  font-size: 90px !important;
+  width: 200px !important;
+  height: 200px !important;
+  color: #fff;
+}
+
+/* Content styles */
+.compare-card .slide2 .compare-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #414141;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.compare-card .slide2 .compare-card-desc {
   font-size: 1rem;
+  color: #414141;
+  text-align: center;
+  margin: 0;
 }
 serviceNowAIBotIcon {
     position: fixed;
@@ -431,7 +521,7 @@ serviceNowAIBotIcon {
 }
 
 .button-comparepage:hover {
-  background: linear-gradient(90deg,#7373D2 30%, #2781c6 100%);
+  background: linear-gradient(90deg, #7373D2 30%, #2781c6 100%);
   transform: translateY(-2px) scale(1.04);
   color: #fff;
 }
@@ -486,20 +576,15 @@ serviceNowAIBotIcon {
   font-size: 1rem;
   transition: border 0.2s, background 0.2s;
 }
-.file-upload-input:hover,.file-upload-input:hover,
-.file-upload-input:focus {.file-upload-input:focus {
-  border: 1.5px solid #457b9d;  border: 1.5px solid #457b9d;
-
-
-
-
-
-}  background: rgba(234,244,251,0.85);  background: rgba(234,244,251,0.85);
+.file-upload-input:hover,
+.file-upload-input:focus {
+  border: 1.5px solid #8c8cc4 ;
+  background: linear-gradient(90deg, #8c8cc4 100%);
 }
 .page-title {
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-weight: 800;
-  color: #171718;
+  color: #fafafc;
   letter-spacing: 1px;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
@@ -536,12 +621,30 @@ serviceNowAIBotIcon {
   justify-content: space-between;
   align-items: center;
 }
+.chatbot-header .chatbot-max{  
+ background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  position: relative;
+  right: 8px; /* Move icon a little to the right */
+  bottom: 4px;
+}
 .chatbot-close {
   background: none;
   border: none;
   color: #fff;
   font-size: 1.3rem;
   cursor: pointer;
+}
+.chatbot-max {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 0.5rem;
+  cursor: pointer;
+  left: 90px;
 }
 .chatbot-messages {
   flex: 1;
@@ -653,10 +756,15 @@ serviceNowAIBotIcon {
   -webkit-backdrop-filter: blur(8px);
   color: #2d2d2d;
   font-family: "Reem Kufi", sans-serif;
-  padding: 2rem;
   min-height: 100vh;
+  min-width: 100vw;
   margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .preview-window-bg pre {
   background: transparent;
   color: #3A294F;
@@ -665,6 +773,11 @@ serviceNowAIBotIcon {
   box-shadow: none;
   padding: 0;
   margin: 0;
+  text-align: left;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: auto;
+  display: block;
 }
 
 /* Add to App.css or ComparePage.css */
@@ -693,4 +806,94 @@ serviceNowAIBotIcon {
   box-shadow: 0 4px 16px rgba(44,62,80,0.18);
 }
 
+::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
 
+/* Show only slide1 by default, reveal slide2 on hover */
+.compare-card .slide2 {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.compare-card:hover .slide2,
+.compare-card:focus-within .slide2 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.compare-card .slide1 {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.compare-card:hover .slide1,
+.compare-card:focus-within .slide1 {
+  opacity: 0;
+}
+
+/* Add to App.css */
+body {
+  overflow-y: auto;
+}
+
+/* Add this to the end of your App.css for thin scrollbars across the app */
+
+body,
+html,
+.flex,
+.compare-table-scroll,
+::-webkit-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+}
+
+body::-webkit-scrollbar,
+.compare-table-scroll::-webkit-scrollbar {
+  width: 1px; /* Chrome, Safari, Edge */
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb,
+.compare-table-scroll::-webkit-scrollbar-thumb {
+  background: #121213;
+  border-radius: 1px;
+}
+
+body::-webkit-scrollbar-track,
+.compare-table-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Add to your App.css for maximized style */
+/* filepath: c:\Users\2047850\smart-benefit - Copy\src\App.css */
+.chatbot-popup.chatbot-maximized {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  max-height: non !important;
+  border-radius: 0 !important;
+  z-index: 9999 !important;
+  background: #6464d9 !important;
+  box-shadow: none !important;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.chatbot-maximized {
+  border: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  left: 570px;
+  bottom: 4px;
+}
