@@ -79,7 +79,7 @@ function Home() {
               letterSpacing: '0.5px',
             }}
           >
-            Welcome!
+            Welcome to Tango AI!
           </h2>
         </div>
         <div
@@ -99,13 +99,17 @@ function Home() {
             WebkitBackdropFilter: 'blur(12px)', // Safari support
           }}
         >
-          <div style={{ marginTop: 10 }}>
-            Welcome to Tango AI – an integrated platform for applied Artificial Intelligence.
+          <div style={{ marginTop: 10, textAlign: 'center' }}>
+            <b>Tango AI is an integrated platform for applied Artificial Intelligence!!!</b>
+</div>
+            <ul style={{ marginTop: 10, paddingLeft: 20, listStyleType: 'disc', lineHeight: 1.5 }}>
+              <p>Tango AI provides a suite of AI and Machine Learning–driven use cases that enable users to harness intelligent solutions with ease. The platform offers interactive widgets that guide you to capabilities such as document comparison, predictive modeling, and exploratory AI applications, with more features being added continuously. Each section is designed to demonstrate how advanced AI techniques can drive efficiency, accuracy, and innovation in real-world scenarios.</p>
+              <div style={{ marginTop: 10 }} />
+              <p>As the platform expands, Tango AI will serve as a comprehensive hub for exploring practical AI applications across diverse domains.</p>
+            </ul>
 
-Tango AI provides a suite of AI and Machine Learning–driven use cases that enable users to harness intelligent solutions with ease. The platform offers interactive widgets that guide you to capabilities such as document comparison, predictive modeling, and exploratory AI applications, with more features being added continuously. Each section is designed to demonstrate how advanced AI techniques can drive efficiency, accuracy, and innovation in real-world scenarios. As the platform expands, Tango AI will serve as a comprehensive hub for exploring practical AI applications across diverse domains. 
-            
           </div>
-        </div>
+        
         {/* Main Content as horizontal cards with horizontal scroll */}
         <div
           ref={cardsContainerRef}

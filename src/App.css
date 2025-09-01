@@ -367,7 +367,7 @@ nav {
   transition: height 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
   box-shadow: 0 2px 8px rgba(44,62,80,0.08);
   border-radius: 18px;
-  background: #fff;
+  background: #c6becd;
   overflow: hidden;
   cursor: pointer;
   margin-bottom: 6px;
@@ -386,8 +386,8 @@ nav {
   justify-content: center;
   transition: opacity 1.3s, height 0.4s cubic-bezier(.4,2,.6,1);
   opacity: 1;
-  background: #fff;
-  background-color: #f7f7fa; /* Light background for slide1 */
+  background: #f2f2f3;
+  background-color: #bfbfdb; /* Light background for slide1 */
 }
 
 /* Slide 2: hidden by default */
@@ -406,7 +406,7 @@ nav {
   top: 0; left: 0; right: 0;
   z-index: 3;
   transition: opacity 1.3s;
-  background: #fff;
+  background: #c1c1de; /* Darker background for slide2 */
 }
 
 /* On hover/focus: expand card, hide slide1, show slide2 */
