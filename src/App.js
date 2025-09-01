@@ -4,7 +4,6 @@ import ComparePage from './pages/ComparePage';
 import LoginPage from './pages/LoginPage';
 import RegistrationLogin from './pages/RegistrationLogin'; // Import RegistrationLogin
 import Home from './pages/Home'; // Import Home component
-import Notification from './pages/Notification'; // Import Notification component
 import HistoryPage from './pages/HistoryPage';
 import './App.css'; // Import your CSS file
 function App() {
@@ -18,7 +17,6 @@ function App() {
               <Route path="/Home" element={<Home />} /> {/* Set Home as the starter page */}
               <Route path="/compare" element={<ComparePage />} />
               <Route path="/register" element={<RegistrationLogin />} /> {/* Add this line */}
-              <Route path="/notification" element={<Notification />} />
               <Route path="/history" element={<HistoryPage  />} />
             </Routes>
           </div>

@@ -48,7 +48,7 @@ function ChatBot({ onClose }) {
             <br />
             <button
               className="chatbot-demo-btn"
-              onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}
+              onClick={() => window.open('https://www.youtube.com', '_blank')}
             >
               ▶️ Watch Demo
             </button>

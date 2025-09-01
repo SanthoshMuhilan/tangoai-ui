@@ -363,116 +363,102 @@ nav {
 .compare-card {
   position: relative;
   width: 240px;
-  height: 220px;
-  background: #fff;
+  height: 90px;
+  transition: height 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
   border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+  background: #fff;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
-  transition: box-shadow 0.25s;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: stretch;
   cursor: pointer;
+  margin-bottom: 6px;
 }
 
-/* Slide 1 (icon area) */
+/* Slide 1: visible by default, small height */
 .compare-card .slide1 {
   position: absolute;
   top: 0; left: 0; right: 0;
   width: 100%;
   height: 100%;
-  background: #f8f7f7;
+  z-index: 2;
   display: flex;
-  flex-direction: column; /* Stack title and icon vertically */
-  justify-content: flex-start; /* Title at top, icon below */
+  flex-direction: column;
   align-items: center;
-  z-index: 1;
-  transition: transform 10s;
-  transform: translateY(0px);
-  padding-top: 18px; /* Space for title */
+  justify-content: center;
+  transition: opacity 1.3s, height 0.4s cubic-bezier(.4,2,.6,1);
+  opacity: 1;
+  background: #fff;
+  background-color: #f7f7fa; /* Light background for slide1 */
 }
-.compare-card .slide1 .slide1-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #3A294F;
-  margin-bottom: 12px;
-  text-align: center;
+
+/* Slide 2: hidden by default */
+.compare-card .slide2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;      /* Center text horizontally */
   width: 100%;
-  letter-spacing: 0.5px;
+  height: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 3;
+  transition: opacity 1.3s;
+  background: #fff;
+}
+
+/* On hover/focus: expand card, hide slide1, show slide2 */
+.compare-card:hover,
+.compare-card:focus-within {
+  height: 260px;
+  box-shadow: 0 8px 24px rgba(44,62,80,0.18);
 }
 
 .compare-card:hover .slide1,
 .compare-card:focus-within .slide1 {
-  transform: translateY(0);
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* Slide 2 (content area) */
-.compare-card .slide2 {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  z-index: 2;
-  transition: transform 10s;
-  transform: translateY(-100px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-}
 .compare-card:hover .slide2,
 .compare-card:focus-within .slide2 {
-  transform: translateY(0);
-}
-.compare-card .slide2::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 4px;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #2c73df;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Icon style */
-.compare-card .icon {
+/* Responsive image/icon */
+.compare-card .icon img,
+.compare-card .compare-card-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  margin: 10px auto 0 auto;
+}
+
+/* Slide1 title glass effect */
+.compare-card .slide1-title {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #2b2b2b;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  width: 80%;
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px; 
-  height: 1000%;
-}
-.compare-card .icon svg,
-.compare-card .icon i {
-  font-size: 90px !important;
-  width: 200px !important;
-  height: 200px !important;
-  color: #fff;
+  margin-bottom: 0;
 }
 
-/* Content styles */
-.compare-card .slide2 .compare-card-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #414141;
-  margin-bottom: 10px;
-  text-align: center;
-}
-.compare-card .slide2 .compare-card-desc {
-  font-size: 1rem;
-  color: #414141;
-  text-align: center;
-  margin: 0;
-}
-serviceNowAIBotIcon {
+.serviceNowAIBotIcon {
     position: fixed;
     bottom: 0px;
     right: 0px;
